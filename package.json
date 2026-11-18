@@ -1,0 +1,11 @@
+{
+  "name": "praxos-web-chats",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Browser extension that saves chats on claude.ai and chatgpt.com to Praxos.",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "pack": "node scripts/pack.mjs"
+  }
+}

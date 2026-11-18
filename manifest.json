@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Praxos for web chats",
+  "short_name": "Praxos",
+  "version": "0.1.0",
+  "description": "Saves your chats on claude.ai and chatgpt.com to your Praxos memory, so your other agents and your team's tools can use what you worked out there.",
+  "icons": { "16": "icons/16.png", "48": "icons/48.png", "128": "icons/128.png" },
+  "action": { "default_popup": "popup.html", "default_title": "Praxos for web chats" },
+  "background": { "service_worker": "background.js" },
+  "permissions": ["storage", "unlimitedStorage", "alarms"],
+  "host_permissions": [
+    "https://claude.ai/*",
+    "https://chatgpt.com/*",
+    "https://api.mypraxos.com/*",
+    "https://hooks.mypraxos.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://claude.ai/*", "https://chatgpt.com/*"],
+      "js": ["lib/convert.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
